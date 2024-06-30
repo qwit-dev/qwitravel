@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qwitravel/ui/auth/login.dart';
 
 void main() {
   runApp(const MainApp());
@@ -9,12 +10,34 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    final navigatorKey = GlobalKey<NavigatorState>();
+
+    return MaterialApp(
+      navigatorKey: navigatorKey,
       home: Scaffold(
         body: Center(
-          child: Text('Hello Hungary, (project_qwitravel_dev) is coming!'),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              SizedBox(
+                height: 200,
+              ),
+              const Text('Hello Hungary, (project_qwitravel_dev) is coming!'),
+              TextButton(
+                  onPressed: () {
+                    Navigator.pushNamed(
+                      context,
+                      '/login',
+                    );
+                  },
+                  child: Text('Login')),
+            ],
+          ),
         ),
       ),
+      routes: {
+        '/login': (context) => const LoginScreen(),
+      },
     );
   }
 }

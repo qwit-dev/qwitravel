@@ -8,11 +8,9 @@ import 'package:uuid/uuid.dart';
 
 import 'config.dart';
 
-enum Pages { home, grades, timetable, messages, absences }
+enum Pages { map, favourites, tickets, profile }
 
 enum UpdateChannel { stable, beta, dev }
-
-enum VibrationStrength { off, light, medium, strong }
 
 class SettingsProvider extends ChangeNotifier {
   final DatabaseProvider? _database;
@@ -102,7 +100,7 @@ class SettingsProvider extends ChangeNotifier {
     return SettingsProvider(
       database: database,
       language: "hu",
-      startPage: Pages.home,
+      startPage: Pages.map,
       theme: ThemeMode.system,
       accentColor: AccentColor.qwit,
       newsEnabled: true,

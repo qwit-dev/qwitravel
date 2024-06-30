@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 enum AccentColor {
   qwit,
-  refilc,
   blue,
   green,
   lime,
@@ -16,9 +15,8 @@ enum AccentColor {
   custom
 }
 
-Map<AccentColor, Color> accentColorMap = {
+final Map<AccentColor, Color> accentColorMap = {
   AccentColor.qwit: const Color(0xFF9E00FF),
-  AccentColor.refilc: const Color(0xFF3D7BF4),
   AccentColor.blue: Colors.blue.shade300,
   AccentColor.green: Colors.green.shade400,
   AccentColor.lime: Colors.lightGreen.shade400,
